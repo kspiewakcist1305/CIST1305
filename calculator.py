@@ -17,7 +17,7 @@ import math
 # Defining the main function
 def main():
     # Printing the welcome message
-    print("Welcome to the Advanced Calculator!")
+    print("Welcome to the Calculator!")
     print("This program can perform the following operations:")
     print("1. Addition")
     print("2. Subtraction")
