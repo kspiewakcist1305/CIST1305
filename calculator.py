@@ -1,3 +1,4 @@
+# Name: Krystian Spiewak
 # This program will be an calculator that can perform the following operations:
 # 1. Addition
 # 2. Subtraction
@@ -8,6 +9,7 @@
 # 7. Square Root
 # 8. Logarithm
 # 9. Exit
+
 
 # Importing the required libraries
 import math
