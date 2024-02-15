@@ -1,14 +1,13 @@
-# This program will be an advanced calculator that can perform the following operations:
+# This program will be an calculator that can perform the following operations:
 # 1. Addition
 # 2. Subtraction
 # 3. Multiplication
 # 4. Division
 # 5. Exponentiation
-# 6. Exponential function
-# 7. Factorial
-# 8. Square Root
-# 9. Logarithm
-# 10. Exit
+# 6. Factorial
+# 7. Square Root
+# 8. Logarithm
+# 9. Exit
 
 # Importing the required libraries
 import math
