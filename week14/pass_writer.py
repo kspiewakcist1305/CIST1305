@@ -1,6 +1,6 @@
 # password = input("create a password? ")
 def view():
-    print()
+    print("\nYour stored passwords are: \n")
     with open("passwords.txt", "r") as f:
         for line in f.readlines():
             user, password = line.split(" | ")
