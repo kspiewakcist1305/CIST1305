@@ -20,8 +20,7 @@ while True:
 
     if mode == "q":
         break
-
-    if mode == "view":
+    elif mode == "view":
         view()
     elif mode == "add":
         add()
