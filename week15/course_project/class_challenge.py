@@ -65,24 +65,48 @@ def buy_stock():
     stock_qty = float(input('Enter quantity: '))
     stock_price = float(input('Enter price: '))
     db_cursor.execute('''
-        INSERT INTO stocks (date, trans, symbol, qty, price) 
+        INSERT INTO stocks (date, trans, symbol, qty, price)
         VALUES (?, ?, ?, ?, ?)
-    ''', date, transaction_type, stock_symbol, stock_qty, stock_price)
+    ''', (date, transaction_type, stock_symbol, stock_qty, stock_price))
     db_conn.commit()
     print(f'{Fore.GREEN}Stock purchased{Style.RESET_ALL}')
     print('')
 
 
 def sell_stock():
-    print('Sell stock')
+    date = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+    transaction_type = 'SELL'
+    stock_symbol = input('Enter stock symbol: ')
+    stock_qty = float(input('Enter quantity: '))
+    stock_price = float(input('Enter price: '))
+    db_cursor.execute('''
+        INSERT INTO stocks (date, trans, symbol, qty, price)
+        VALUES (?, ?, ?, ?, ?)
+    ''', (date, transaction_type, stock_symbol, stock_qty, stock_price))
+    db_conn.commit()
+    print(f'{Fore.GREEN}Stock sold{Style.RESET_ALL}')
+    print('')
 
 
 def view_portfolio():
-    print('View portfolio')
+    db_cursor.execute('''
+        SELECT symbol, SUM(qty) FROM stocks
+    ''')
+    portfolio = db_cursor.fetchall()
+    for stock in portfolio:
+        print(stock)
+    print('')
+
 
 
 def view_transactions():
-    print('View transactions')
+    db_cursor.execute('''
+        SELECT * FROM stocks
+    ''')
+    transactions = db_cursor.fetchall()
+    for transaction in transactions:
+        print(transaction)
+    print('')
 
 
 def initDB():
